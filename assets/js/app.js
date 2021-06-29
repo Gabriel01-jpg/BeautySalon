@@ -13,6 +13,7 @@ for(const element of toggle){
 
 const links = document.querySelectorAll('nav ul li a')
 for (const link of links){
+    console.log(link)
     link.addEventListener('click', function() {
         nav.classList.remove('show')
     })
@@ -31,3 +32,33 @@ window.addEventListener('scroll', function() {
     }
 })
 
+
+/* SWIPER CAROUSEL TESTIMONIALS */
+
+const swiper = new Swiper('.swiper-container', {
+    slidesPerView: 1,
+    pagination: {
+        el: '.swiper-pagination'
+    },
+
+    mousewheel: true, 
+    keyboard: true
+
+  });
+
+/* SCROLLREVEAL  */
+
+const scrollReveal = ScrollReveal({
+    origin: 'top',
+    distance: '30px',
+    duration: 700,
+    reset: true
+})
+
+scrollReveal.reveal(`#home .text, #home .image
+ #about .image, #about .text, 
+ #services header, #services .card,
+ #testimonials header, #testimonials .testimonials,
+ #contact .text, #contact .links`,
+
+{ interval: 100} )

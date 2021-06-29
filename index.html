@@ -5,11 +5,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BeautySalon</title>
+    <!-- SWIPER-->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <!-- Styles-->
     <link rel="stylesheet" href=".\assets\css\style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/fonts/style.css">
+
+    
 </head>
 <body>
     <header id="header">
@@ -30,7 +35,8 @@
         </nav>   
     </header> 
 
-    <main>
+    <main> 
+        <!-- HOME-->
         <section class="section" id="home">
             <div class="container grid">
                 <div class="image">
@@ -44,6 +50,7 @@
             </div>  
         </section>
         <div class="divider-1"></div>
+        <!-- ABOUT-->
         <section class="section" id="about">
             <div class="container grid">
                 <div class="image">
@@ -60,6 +67,7 @@
             </div>
         </section>
         <div class="divider-2"></div>
+        <!-- SERVICES-->
         <section class="section" id="services">
             <div class="container grid">
                 <header>
@@ -85,12 +93,94 @@
                 </div>
             </div>
         </section>
+        <div class="divider-1"></div>
+        <!-- TESTIMONIALS-->
+        <section class="section" id="testimonials">
+            <div class="container">
+                <header>
+                    <h2 class="title">Depoimentos de quem já passou por aqui</h2>
+                </header>
+                <div class="testimonials swiper-container">
+                    <div class="swiper-wrapper">
+                        <div class="testimonial swiper-slide">
+                            <blockquote>
+                                <p>
+                                    <span>&ldquo;</span>
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore voluptate tenetur libero veritatis. Voluptates, molestias ab. Molestias, totam voluptates? Voluptates labore corrupti quaerat in laborum nemo unde beatae, quod aspernatur.
+                                </p>
+                                <cite>
+                                    <img src="assets/photos/wanessa.jpg" alt="smiling woman">
+                                    Wanessa Souza
+                                </cite>
+                            </blockquote>
+                        </div>
+                        <div class="testimonial swiper-slide">
+                            <blockquote>
+                                <p>
+                                    <span>&ldquo;</span>
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore voluptate tenetur libero veritatis. Voluptates, molestias ab. Molestias, totam voluptates? Voluptates labore corrupti quaerat in laborum nemo unde beatae, quod aspernatur.
+                                </p>
+                                <cite>
+                                    <img src="assets/photos/gabriel.jpg" alt="A man called Gabriel">
+                                    Gabriel Lima
+                                </cite>
+                            </blockquote>
+                        </div>
+                        <div class="testimonial swiper-slide">
+                            <blockquote>
+                                <p>
+                                    <span>&ldquo;</span>
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore voluptate tenetur libero veritatis. Voluptates, molestias ab. Molestias, totam voluptates? Voluptates labore corrupti quaerat in laborum nemo unde beatae, quod aspernatur.
+                                </p>
+                                <cite>
+                                    <img src="assets/photos/herika.jpg" alt="a woman called Herika">
+                                    Herika Vanessa
+                                </cite>
+                            </blockquote>
+                        </div>
+                    </div>
+                    <div class="swiper-pagination"></div>
+                </div>
+            </div>
+        </section>
 
+        <div class="divider-2"></div>
+        <!-- CONTACT-->
+
+        <section class="section" id="contact">
+            <div class="container grid">
+                <div class="text">
+                    <h2 class="title">Entre em contato conosco!</h2>
+                    <p>Entre em contato com a Beautysalon, queremos tirar suas dúvidas, ouvir suas críticas e sugestões.</p>
+                    <a class="button" href="https://api.whatsapp.com/send?phone=+5562981204631&text=Oi! Gostaria de agendar um horário" target="_blank"><i class="icon-whatsapp"></i>Entrar em contato</a>
+                </div>
+
+                <div class="links">
+                    <ul class="grid">
+                        <li><i class="icon-phone"></i>62 98120-4631</li>
+                        <li><i class="icon-map-pin"></i>R. Maria Faleiro</li>
+                        <li><i class="icon-mail"></i> contato@gabriellima.com</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        
     </main>
 
     <footer>
 
     </footer>
+    <!-- SWIPER-->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+
+    <!-- SCROLL REVEAL-->
+    
+    <script src="https://unpkg.com/scrollreveal"></script>
+
+    <!-- MAIN JS-->
+
     <script src="assets/js/app.js"></script>
 </body>
 </html>
