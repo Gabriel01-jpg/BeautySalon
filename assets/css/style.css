@@ -131,6 +131,10 @@ main {
 .logo span {
     color: var(--base-color);
 
+} 
+
+.logo-alt span{
+    color: var(--body-color);
 }
 
 /* ====/// NAVIGATION///===== */
@@ -443,4 +447,41 @@ nav.show div.icon-close{
 
 #contact ul li i{
     color: var(--base-color);
+}
+
+/* ========= FOOTER ============ */
+
+footer {
+    background-color: var(--base-color);
+}
+
+
+ 
+footer .logo {
+    display: block;
+    margin-bottom: 1.5rem;
+}
+
+footer .brand p{
+    color: var(--text-color-light);
+    margin-bottom: 0.75rem;
+}
+
+footer .social a{
+    font-size: 1.5rem;
+    color: var(--text-color-light);
+    padding-right: 2rem;
+}
+
+/*  BACK TO TOP*/
+
+a.back-to-top {
+    position: fixed;
+    right: 1rem;
+    bottom: 0;
+    font-size: 2rem;
+    padding: .4rem;
+    object-fit: cover; 
+    clip-path: circle();
+    background: var(--base-color);
 }

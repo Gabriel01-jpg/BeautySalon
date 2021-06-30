@@ -21,13 +21,17 @@ for (const link of links){
 
 /* MUDAR O HEADER DA PÁGINA QUANDO DER SCROLL */
 const header = document.querySelector('#header')
+const backToTop = document.querySelector('#back-to-top')
 const navHeight = header.offsetHeight
 
 window.addEventListener('scroll', function() {
     if(window.scrollY >= navHeight){
         header.classList.add('scroll')
+        backToTop.classList.add('back-to-top')
     } else {
         header.classList.remove('scroll')
+        backToTop.classList.remove('back-to-top')
+
 
     }
 })
