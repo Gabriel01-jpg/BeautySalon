@@ -13,28 +13,22 @@ for(const element of toggle){
 
 const links = document.querySelectorAll('nav ul li a')
 for (const link of links){
-    console.log(link)
     link.addEventListener('click', function() {
         nav.classList.remove('show')
     })
 }
 
 /* MUDAR O HEADER DA PÁGINA QUANDO DER SCROLL */
-const header = document.querySelector('#header')
-const backToTop = document.querySelector('#back-to-top')
-const navHeight = header.offsetHeight
 
-window.addEventListener('scroll', function() {
+function ChangeHeaderScroll() {
+    const header = document.querySelector('#header')
+    const navHeight = header.offsetHeight
     if(window.scrollY >= navHeight){
         header.classList.add('scroll')
-        backToTop.classList.add('back-to-top')
     } else {
         header.classList.remove('scroll')
-        backToTop.classList.remove('back-to-top')
-
-
     }
-})
+}
 
 
 /* SWIPER CAROUSEL TESTIMONIALS */
@@ -63,6 +57,27 @@ scrollReveal.reveal(`#home .text, #home .image
  #about .image, #about .text, 
  #services header, #services .card,
  #testimonials header, #testimonials .testimonials,
- #contact .text, #contact .links`,
+ #contact .text, #contact .links,
+ footer .brand, footer .social`,
+ 
 
 { interval: 100} )
+
+/* BOTÃO DE VOLTAR PARA O TOP*/
+
+ 
+
+function BackToTop () {
+    const backToTop = document.querySelector('.back-to-top');
+    if(window.scrollY >= 560) {
+        backToTop.classList.add('show');
+    }
+    else{
+        backToTop.classList.remove('show');
+    }
+
+}
+window.addEventListener('scroll', function() {
+    ChangeHeaderScroll();
+    BackToTop();
+})
