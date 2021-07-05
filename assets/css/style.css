@@ -6,9 +6,12 @@
     box-sizing: border-box;
 }
 
+/* Tirou a bolinha ao lado das UL */
 ul {
     list-style-type: none;
 }
+
+/* Underline removido */
 a {
     text-decoration: none;
 }
@@ -47,7 +50,7 @@ body {
 .title {
     font: 700 var(--title-size) var(--title-font);
     color: var(--title-color);
-    -webkit-font-smoothing: auto;
+    /* -webkit-font-smoothing: auto; */
 }
 
 
@@ -200,15 +203,19 @@ nav ul li a:hover {
 nav ul li a::after {
     content: '';
     width: 0%;
+    visibility: hidden;
+    opacity: 0;
     height: 2px;
     bottom: -1.5rem;
     left: 2px;
     background: var(--base-color);
     position: absolute;
-    transition: width 1s;
+    transition: 1s;
 
-}
+} 
 nav ul li a:hover::after {
+    visibility: visible;
+    opacity: 1;
     width: 100%;
 }
 .divider-1 {
@@ -525,13 +532,14 @@ footer .social a:hover {
 /* extra large devices: >= 1200  */
 
 @media (min-width: 1200px) {
-    :root{
-    }
+    /*:root{
+ 
+    } */
 
     main {
         margin-top: var(--header-height);
     }
-    /* Classes reusaveis*/
+    /* Classes reusaveis */
     .button {
         height: 3.125rem;
     }
@@ -545,9 +553,24 @@ footer .social a:hover {
         padding: 10rem 0;
     }
 
+    .section header, #testimonials header {
+        max-width: 32rem;
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
     /* HEADER SCROLL */
 
+    #header.scroll nav ul li a:hover{
+        color: white;
+    }
+
+    #header.scroll nav ul li a::after {
+        background-color: white;
     
+    }
+
     /* Navigation */
 
     nav .menu{
@@ -562,12 +585,13 @@ footer .social a:hover {
     }
     
     nav .menu ul a.title {
-        font: 400 1rem var(--body-font);
+        font: 500 1rem var(--body-font);
     } 
     
     nav .icon-menu {
         display: none;
     }
+
 
     /* HOME */
 
@@ -588,12 +612,35 @@ footer .social a:hover {
     
     }
     
+    /* ABOUT  */
+
+    #about .container{
+        grid-auto-flow: column;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    
+
+    /* SERVICES */
+
+    .cards {
+        grid-auto-flow: column;
+    }
+
+    /* Testimonials */
+
+    #testimonials .container{
+        margin-left: auto;
+        margin-right: auto;
+    }
 }
+
 /* large devices: 1023 > */
 /* large devices: 992 > */
 
 @media (min-width: 992px ) {
-    :root{
+     :root{
         --title-size: 2.25rem; 
         --subtitle-font-size: 1.125rem;
     }
