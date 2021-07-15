@@ -20,9 +20,9 @@ for (const link of links){
 
 /* MUDAR O HEADER DA PÁGINA QUANDO DER SCROLL */
 
+const header = document.querySelector('#header')
+const navHeight = header.offsetHeight
 function ChangeHeaderScroll() {
-    const header = document.querySelector('#header')
-    const navHeight = header.offsetHeight
     if(window.scrollY >= navHeight){
         header.classList.add('scroll')
     } else {
@@ -40,7 +40,14 @@ const swiper = new Swiper('.swiper-container', {
     },
 
     mousewheel: true, 
-    keyboard: true
+    keyboard: true,
+
+    breakpoints: {
+        767: {
+            slidesPerView: 2,
+            setWrapperSize: true
+        }
+    }
 
   });
 
@@ -67,8 +74,8 @@ scrollReveal.reveal(`#home .text, #home .image
 
  
 
+const backToTop = document.querySelector('.back-to-top');
 function BackToTop () {
-    const backToTop = document.querySelector('.back-to-top');
     if(window.scrollY >= 560) {
         backToTop.classList.add('show');
     }
@@ -78,7 +85,35 @@ function BackToTop () {
 
 }
 
+/* Menu ativo conforme seção na página */
+
+const sections = document.querySelectorAll('main section[id]')
+console.log(sections)
+
+function activateMenuAtCurrentSection(){
+    const checkpoint = window.pageYOffset + (window.innerHeight / 8) * 4 // pega o deslocamento Y da janela e faz um cálculo
+    // para cada seção,
+    for (const section of sections){
+        const sectionTop = section.offsetTop // pega o topo da seção
+        const sectionHeight = section.offsetHeight // pega a altura da secao
+        const sectionID = section.getAttribute('id') // pode pegar atributo atrás da section, passando o nome do atributo
+
+        const startLimit = checkpoint >= sectionTop // desde que o checkpoint seja maior ou igual o topo da seção
+        const endLimit = checkpoint <= sectionTop + sectionHeight // adiciona o topo da secao + o tamanho dela e delimita o limit dessa section
+        
+        if (startLimit && endLimit){ // se está entre o início da secao e o final
+            document.querySelector(`nav ul li a[href*=${sectionID}]`).classList.add('active')
+        } else {
+            document.querySelector(`nav ul li a[href*=${sectionID}]`).classList.remove('active')
+        }
+    }
+}
+
 window.addEventListener('scroll', function() {
     ChangeHeaderScroll();
     BackToTop();
+    activateMenuAtCurrentSection()
 })
+
+
+

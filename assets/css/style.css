@@ -131,6 +131,7 @@ img {
 }
 
 
+
 /* ====/// LOGO///========= */
 .logo {
     font: 700 1.31rem 'Poppins', sans-serif;
@@ -200,7 +201,7 @@ nav ul li a:hover {
     color: var(--base-color);
 }
 
-nav ul li a::after {
+nav ul li a::after, nav ul li a.active::after {
     content: '';
     width: 0%;
     visibility: hidden;
@@ -212,8 +213,8 @@ nav ul li a::after {
     position: absolute;
     transition: 1s;
 
-} 
-nav ul li a:hover::after {
+}
+nav ul li a:hover::after, nav ul li a.active::after {
     visibility: visible;
     opacity: 1;
     width: 100%;
@@ -486,8 +487,7 @@ footer .brand p{
     margin-bottom: 0.75rem;
 }
 
-footer .grid {
-    gap: 2rem;
+footer .social {
     grid-auto-flow: column;
     width: fit-content;
     padding-top: 2rem;
@@ -545,7 +545,7 @@ footer .social a:hover {
     }
 
     .container {
-        max-width: 1300px;
+        max-width: 1200px;
         margin-left: auto;
         margin-right: auto;
     }
@@ -571,6 +571,10 @@ footer .social a:hover {
     
     }
 
+    #header.scroll nav ul li a.active {
+        color: white;
+        transition: .7s;
+    }
     /* Navigation */
 
     nav .menu{
@@ -586,7 +590,13 @@ footer .social a:hover {
     
     nav .menu ul a.title {
         font: 500 1rem var(--body-font);
+        --webkit-font-smoothing: antialiased;
     } 
+
+    nav .menu ul li a.title.active{
+        font-weight: bold;
+        --webkit-font-smoothing: auto;
+    }
     
     nav .icon-menu {
         display: none;
@@ -625,7 +635,12 @@ footer .social a:hover {
     /* SERVICES */
 
     .cards {
-        grid-auto-flow: column;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    .card {
+        padding-left: 3rem;
+        padding-right: 3rem;
     }
 
     /* Testimonials */
@@ -633,6 +648,35 @@ footer .social a:hover {
     #testimonials .container{
         margin-left: auto;
         margin-right: auto;
+    }
+
+    /* CONTACT */
+
+    #contact .container {
+        grid-auto-flow: column;
+        justify-content: space-between;
+        align-items: center;
+        
+    }
+    #contact .text {
+        max-width: 25rem;
+    }
+
+    /* FOOTER */
+
+    footer.section {
+        padding: 5rem 0;
+    }
+
+    footer .container {
+        display: grid;
+        grid-auto-flow: column;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    footer .logo{
+        font-size: 2.25rem;
     }
 }
 
